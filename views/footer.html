@@ -1,0 +1,23 @@
+</div>
+<br>
+<br>
+<div class='w3bar w3border w3center ' :class='color.background1' id='footer'>
+	<div class='w3bar-item w3padding-16'>v0.0.0</div>
+	<div class='w3bar-item w3padding-16'>{{ langText }}</div>
+	<div class='w3bar-item'>
+		<select class='w3select' disabled v-model='currentLocale' @change='selectChanged'>
+			<option v-for='locale in locales' :value='locale.id'>{{
+				locale.name }}</option>
+		</select>
+	</div>
+	<div class='w3bar-item w3right w3padding-16'>&#169; 2020
+		Demo</div>
+
+	<div class='w3button' style='position: fixed; right: 0px;' :style="{ bottom : $el.offsetHeight + 'px'}"
+		@click='goTop' v-show='showGoTop'>&#8593;</div>
+</div>
+
+<script src="/js.get?a=base&b=footer"></script>
+</body>
+
+</html>

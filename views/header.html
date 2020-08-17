@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="/css" />
+    <script src="/js"></script>
+    <title>ArchCyber I/O Gateway</title>
+</head>
+
+<body>
+    <script>
+        var title = '<?php echo $title;?>';
+        var page = '<?php echo $page;?>';
+    </script>
+    <div id="head_bar">
+
+        <div class="w3display-container w3top" :class="color.background1">
+            <div class="w3button w3xxlarge w3padding" :class='color.button' @click="open">&#9776;</div>
+            <span class="w3xxlarge w3display-middle">{{ title }}</span>
+          
+
+        </div>
+
+        <div class="w3sidebar w3bar-block w3card w3animate-left" style='width:100%;' :class="color.background1"
+            v-show="visible">
+            <button class="w3bar-item w3button w3xxlarge w3wide" :class="color.background2" @click="close">
+                Back &larr;
+            </button>
+
+            <div v-for="item in menu" :class="item.class" @click="menuClick(item.target)">{{ item.text }}</div>
+      
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div id="notify" v-if="visible" class="w3red w3center">
+        <h1>Not Supported!!</h1>
+        <p>I need Safari 10.1+, Chrome 54+, Firefox 63+, IE9 and above</p>
+    </div>
+
+    <script src="/js.get?a=base&b=header"></script>
+
+    <div class="w3padding">

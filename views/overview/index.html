@@ -1,0 +1,17 @@
+<?php 
+    include("./views/header.html")
+?>
+
+<div id="app" class="w3border">
+    <h1>Demo</h1>
+    <h2>Component</h2>
+    <numberinput min='0' max='9999999' default='12345'></numberinput>
+    <h2>For-Loop</h2>
+    <div v-for='item in color'>{{ item }}</div>
+</div>
+
+
+<script src="/js.get?a=overview&b=index"></script>
+<?php 
+    include("./views/footer.html")
+?>
